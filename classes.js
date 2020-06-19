@@ -30,7 +30,19 @@
 */
 
 //Code Here
-
+class Employee {
+  constructor(first_name, last_name, email, age){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age =age;
+    this.makeWidget = this.makeWidget;
+  }
+    makeWidget(){
+      
+    return `${this.first_name} ${this.last_name} Widget`
+  }
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -48,13 +60,27 @@
 */
 
 //Code Here
+class Manager extends Employee {
+  constructor(reports){
+    super(first_name, last_name, email, age);
+    this.reports = reports;
+  }
+    hire(){
+      Employee.push(this.reports([]))
+    }
+    
+    fire(){
+      Employee.delete(this.reports, [i]);
+    }
+  }
 
 
 ////////// PROBLEM 3 //////////
 
 /*
   Managers for Widget Co. get promoted when they get more employees, and get a bonus when they fire employees.
-  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties as a manager with the following additional properties:
+  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties 
+  as a manager with the following additional properties:
     - title - default 'Not a manager'
     - bonus - default 0
 
